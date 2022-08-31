@@ -1,0 +1,16 @@
+@import '_variaveis.scss';
+*{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-image: radial-gradient($secundary-color, $primary-color);
+    font-family: $font-family;
+    font-weight: 300;
+    color: $font-color;
+    
+}
+.container{
+    margin: 0 auto;
+    max-width: 90vw;
+}

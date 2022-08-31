@@ -1,0 +1,49 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap';
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: radial-gradient(#0F3460, #16213E);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #6a7d94;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90vw;
+}
+
+.header {
+  text-align: center;
+  padding-top: 2rem;
+}
+.header .header__title {
+  font-size: 1.25rem;
+  color: #fff;
+  text-transform: lowercase;
+  padding-bottom: 2.25rem;
+}
+.header .header__nav {
+  border-radius: 50px;
+  background: #16213E;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+.header .header__nav .nav__link {
+  border-radius: 20px;
+  text-decoration: none;
+  color: #6a7d94;
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+.header .header__nav .active {
+  background-color: #533483;
+  color: #16213E;
+}/*# sourceMappingURL=stylus.css.map */

@@ -1,0 +1,38 @@
+@import '../base/variaveis';
+
+.header {
+    text-align: center;
+    padding-top: 2rem;
+
+    .header__title {
+        font-size: $font-size*1.25;
+        color: #fff;
+        text-transform: lowercase;
+        padding-bottom: 2.25rem;
+    }
+
+    .header__nav {
+        
+        border-radius: 50px;
+        background: $primary-color;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+     
+        .nav__link {
+            border-radius: 20px;
+            text-decoration: none;
+            color: $font-color;
+            font-size: $font-size/1.25;
+            font-weight: 700;
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .active {
+            background-color: $quaternary-color;
+            color: $primary-color;
+        }
+    }
+}

@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" 
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/stylus.css">
     <title>Pomodoro App</title>
 </head>
 
 <body>
     <header class="header">
         <h1 class="header__title">Pomodoro</h1>
-        <nav class="header__nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="" class="nav__link">pomodoro</a></li>
-                <li class="nav__item"><a href="" class="nav__link">short break</a></li>
-                <li class="nav__item"><a href="" class="nav__link">long break</a></li>
+        <nav class="header__nav container">
+            
+               <a href="" class="nav__link active">pomodoro</a>
+                <a href="" class="nav__link">short break</a>
+                <a href="" class="nav__link">long break</a>
             </ul>
         </nav>
     </header>
     <main class="main">
-        <section class="timer">
+        <section class="timer container">
             <div class="timer__bar">
                 <span class="timer__time">17:59</span>
                 <button class="timer__pause">pause</button>
@@ -62,7 +66,6 @@
                 </div>
                 <button type="submit"></button>
             </form>
-            
         </section>
     </main>
     <footer class="footer">
