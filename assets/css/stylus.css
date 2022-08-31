@@ -19,12 +19,14 @@ body {
 .header {
   text-align: center;
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .header .header__title {
   font-size: 1.25rem;
   color: #fff;
   text-transform: lowercase;
   padding-bottom: 2.25rem;
+  font-weight: 500;
 }
 .header .header__nav {
   border-radius: 50px;
@@ -46,4 +48,35 @@ body {
 .header .header__nav .active {
   background-color: #533483;
   color: #16213E;
+}
+
+.timer {
+  height: 45vh;
+  width: 45vh;
+  background-color: #16213E;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 20px #0F3460;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.timer .timer__bar {
+  text-align: center;
+}
+.timer .timer__bar .timer__time {
+  display: block;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: 700;
+}
+.timer .timer__bar .timer__pause {
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  background: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: block;
 }/*# sourceMappingURL=stylus.css.map */

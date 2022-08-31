@@ -3,12 +3,14 @@
 .header {
     text-align: center;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 
     .header__title {
         font-size: $font-size*1.25;
         color: #fff;
         text-transform: lowercase;
         padding-bottom: 2.25rem;
+        font-weight: 500;
     }
 
     .header__nav {
