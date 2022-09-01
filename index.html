@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" 
-    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/stylus.css">
     <title>Pomodoro App</title>
 </head>
@@ -16,20 +16,28 @@
     <header class="header">
         <h1 class="header__title">Pomodoro</h1>
         <nav class="header__nav container">
-            
-               <a href="" class="nav__link active">pomodoro</a>
-                <a href="" class="nav__link">short break</a>
-                <a href="" class="nav__link">long break</a>
+
+            <a href="" class="nav__link active">pomodoro</a>
+            <a href="" class="nav__link">short break</a>
+            <a href="" class="nav__link">long break</a>
             </ul>
         </nav>
     </header>
     <main class="main">
-        <section class="timer container">
-            <div class="timer__bar">
-                <span class="timer__time">17:59</span>
-                <button class="timer__pause">pause</button>
+        <section id="app">
+            <div class="base-timer container">
+                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <g class="base-timer__circle">
+                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+                    </g>
+                </svg>
+                <div class="timer">
+                    <span class="timer__time" id="timer">17:59</span>
+                    <button class="timer__pause">pause</button>
+                </div>
             </div>
         </section>
+       
         <button><i></i></button>
         <section class="settings">
             <form action="">
@@ -71,6 +79,7 @@
     <footer class="footer">
 
     </footer>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

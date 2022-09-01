@@ -1,30 +1,48 @@
-.timer{
-    height: 45vh;
-    width: 45vh;
-    background-color: $primary-color;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0px 20px $secundary-color;
+.base-timer{
+    position: relative;
+    height: 300px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    .timer__bar{
-        text-align: center;
-        .timer__time{
-            display: block;
-            color: #fff;
-            font-size: $font-size*5;
-            font-weight: 700;
+    .base-timer__svg {
+        transform: scaleX(-1);
+      }
+    .base-timer__circle{
+        fill: none;
+        stroke: none;
+        .base-timer__path-elapsed{
+            stroke-width: 7px;
+            stroke: grey;
         }
-        .timer__pause{
-            margin: 0 auto;
-            outline: none;
-            border: none;
-            background: none;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            display: block;
+        .base-timer__path-remaining{
+            stroke-width: 7px;
+            stroke-linecap: round;
+            transform: rotate(90deg);
+            transform-origin: center;
+            transition: 1s linear all;
+            stroke: currentColor;
         }
+        .base-timer__path-remaining.green {
+            color: rgb(65, 184, 131);
+          }
+          
+          .base-timer__path-remaining.orange {
+            color: orange;
+          }
+          
+          .base-timer__path-remaining.red {
+            color: red;
+          }
+       
+    }
+    .timer{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        
     }
 }
