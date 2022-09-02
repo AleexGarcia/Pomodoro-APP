@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
         integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/stylus.css">
     <title>Pomodoro App</title>
 </head>
@@ -25,54 +28,84 @@
     </header>
     <main class="main">
         <section id="app">
-            <div class="base-timer container">
-                <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <g class="base-timer__circle">
-                        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
-                    </g>
-                </svg>
-                <div class="timer">
-                    <span class="timer__time" id="timer">17:59</span>
-                    <button class="timer__pause">pause</button>
-                </div>
-            </div>
+
         </section>
-       
-        <button><i></i></button>
+
+        <button class="settings__btn"><i class="fa-solid fa-gear"></i></button>
         <section class="settings">
             <form action="">
                 <div class="settings__header">
                     <h2>Settings</h2>
-                    <i>X</i>
+                    <i class="fa-solid fa-xmark"></i>
                 </div>
-                <div class="settings__main">
+                <div class="settings__minutes">
                     <h3>time (minutes)</h3>
                     <div class="settings__container">
                         <span>pomodoro</span>
-                        <label for="pomodoro-time"><input type="number" id="pomodoro-time"></label>
+                        <div>
+                            <input pattern="^\d+$" id="pomodoro-time">
+                            <label for="pomodoro-time">
+                                <i class="fa-solid fa-angle-up"></i>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </label>
+                        </div>
+
                     </div>
                     <div class="settings__container">
                         <span>short break</span>
-                        <label for="short-break"><input type="number" id="short-break"></label>
+                        <div>
+                            <input pattern="^\d+$" id="short-break">
+                            <label for="short-break">
+                                <i class="fa-solid fa-angle-up"></i>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </label>
+                        </div>
                     </div>
                     <div class="settings__container">
                         <span>long break</span>
-                        <label for="long-break"><input type="number" id="long-break"></label>
+                        <div>
+                            <input pattern="^\d+$" id="long-break">
+                            <label for="pomodoro-time">
+                                <i class="fa-solid fa-angle-up"></i>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="settings__font">
                     <h3 class="font__title">Font</h3>
-                    <div class="font">Aa</div>
-                    <div class="font">Aa</div>
-                    <div class="font">Aa</div>
+                    <div>
+                        <input class="font__input" type="radio" value="" name="font" id="font">
+                        <label for="font" class="font__label active">Aa</label>
+                    </div>
+                    <div>
+                        <input class="font__input" type="radio" value="roboto" name="font" id="font">
+                        <label for="font" class="font__label">Aa</label>
+                    </div>
+                    <div>
+                        <input class="font__input" type="radio" value="san-serif" name="font" id="font-3">
+                        <label for="font" class="font__label">Aa</label>
+                    </div>
                 </div>
-                <div class="settings__font">
+                <div class="settings__color">
                     <h3 class="font__title">color</h3>
-                    <label for=""><input type="checkbox" name="" id=""></label>
-                    <label for=""><input type="checkbox" name="" id=""></label>
-                    <label for=""><input type="checkbox" name="" id=""></label>
+                    <div class="color-inputs-container">
+                        <div>
+                            <input class="color__input" type="radio" value="green" name="color" id="font-1">
+                            <label for="color" class="font__label op_1"><i class="fa-solid fa-check"></i></label>
+                        </div>
+                        <div>
+                            <input class="color__input" type="radio" value="red" name="color" id="font-2">
+                            <label for="color" class="color__label op_2"><i class="fa-solid "></i></label>
+                        </div>
+                        <div>
+                            <input class="color__input" type="radio" value="blue" name="color" id="font-3">
+                            <label for="color" class="color__label op_3"><i class="fa-solid "></i></label>
+                        </div>
+                    </div>
+                    
                 </div>
-                <button type="submit"></button>
+                <button class="settings-btn__aply" type="submit">Apply</button>
             </form>
         </section>
     </main>

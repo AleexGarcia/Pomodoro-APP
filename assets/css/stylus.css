@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-body {
+body, html {
   min-height: 100vh;
   background-image: radial-gradient(#0F3460, #16213E);
   font-family: "Roboto", sans-serif;
@@ -51,6 +51,7 @@ body {
 }
 
 .base-timer {
+  margin-top: 2rem;
   position: relative;
   height: 300px;
   display: flex;
@@ -93,4 +94,180 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 5rem;
+}
+
+.main {
+  text-align: center;
+}
+
+.settings__btn {
+  margin-top: 3rem;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.settings {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 90%;
+  border-radius: 20px;
+  height: 85%;
+  background-color: #fff;
+}
+.settings form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.settings form .settings__header {
+  padding: 1.5rem 1rem;
+  width: 100%;
+  border-bottom: 1px solid #6a7d94;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #6a7d94;
+}
+.settings form .settings__header h2 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.settings form .settings__header .fa-solid::before {
+  font-size: 1rem;
+  color: #6a7d94;
+}
+.settings form .settings__minutes {
+  padding: 1.5rem 1rem;
+  width: 100%;
+  border-bottom: 1px solid #6a7d94;
+}
+.settings form .settings__minutes h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  margin-bottom: 1.25rem;
+}
+.settings form .settings__minutes .settings__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.settings form .settings__minutes .settings__container:last-child {
+  margin-bottom: 0;
+}
+.settings form .settings__minutes .settings__container div {
+  display: flex;
+  align-items: center;
+  background: rgb(245, 241, 241);
+  padding: 8px;
+  border-radius: 8px;
+}
+.settings form .settings__minutes .settings__container div input {
+  outline: none;
+  border: none;
+  background: none;
+  width: 100%;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  color: #16213E;
+  text-align: center;
+  font-size: 1rem;
+}
+.settings form .settings__minutes .settings__container div label i {
+  display: block;
+}
+.settings form .settings__minutes .settings__container div label i:before {
+  color: #6a7d94;
+  font-size: 14px;
+}
+.settings form .settings__font {
+  padding: 1.5rem 1rem;
+  width: 100%;
+  border-bottom: 1px solid #6a7d94;
+}
+.settings form .settings__font h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+}
+.settings form .settings__font div {
+  margin-top: 1.5rem;
+  display: inline-block;
+  margin-right: 12px;
+}
+.settings form .settings__font div input {
+  display: none;
+}
+.settings form .settings__font div label {
+  padding: 8px;
+  background-color: rgb(245, 241, 241);
+  border-radius: 50%;
+  font-weight: 500;
+}
+.settings form .settings__font div label.active {
+  background-color: #16213E;
+  color: rgb(245, 241, 241);
+}
+.settings form .settings__color {
+  padding: 1.5rem 1rem;
+  width: 100%;
+  border-bottom: 1px solid #6a7d94;
+  border-bottom: 0;
+}
+.settings form .settings__color h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+}
+.settings form .settings__color .color-inputs-container {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.settings form .settings__color .color-inputs-container div {
+  margin-right: 8px;
+}
+.settings form .settings__color .color-inputs-container div:last-child {
+  margin-right: 0;
+}
+.settings form .settings__color .color-inputs-container div input {
+  display: none;
+}
+.settings form .settings__color .color-inputs-container div label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+.settings form .settings__color .color-inputs-container div label.op_1 {
+  background-color: #0F3460;
+}
+.settings form .settings__color .color-inputs-container div label.op_2 {
+  background-color: #E94560;
+}
+.settings form .settings__color .color-inputs-container div label.op_3 {
+  background-color: #533483;
+}
+.settings form .settings__color .color-inputs-container div label .fa-solid::before {
+  font-size: 12px;
+  color: #fff;
+}
+.settings form .settings-btn__aply {
+  border: none;
+  background-color: #E94560;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
 }/*# sourceMappingURL=stylus.css.map */

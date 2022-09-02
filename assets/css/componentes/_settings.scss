@@ -1,0 +1,207 @@
+@import '../base/variaveis';
+
+@mixin padding-width-border {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    border-bottom: 1px solid $font-color;
+}
+
+@mixin titulos-settings {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+}
+
+.main {
+    text-align: center;
+
+}
+
+.settings__btn {
+    margin-top: 3rem;
+    border: none;
+    background: none;
+    outline: none;
+
+
+}
+
+
+.settings {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 90%;
+    border-radius: 20px;
+    height: 85%;
+    background-color: #fff;
+
+    form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .settings__header {
+            @include padding-width-border;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $font-color;
+
+            h2 {
+                font-weight: 700;
+                font-size: $font-size*1.25;
+
+            }
+
+            .fa-solid {
+
+                &::before {
+                    font-size: 1rem;
+                    color: $font-color;
+                }
+            }
+        }
+
+        .settings__minutes {
+            @include padding-width-border;
+
+            h3 {
+                @include titulos-settings;
+                margin-bottom: 1.25rem;
+            }
+            .settings__container{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-row: auto;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1rem;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    background: $input-color;
+                    padding: 8px;
+                    border-radius: 8px;
+                    input{
+                        outline: none;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        font-weight: 500;
+                        font-family: $font-family;
+                        color: $primary-color;
+                        text-align: center;
+                        font-size: 1rem;
+                    }
+                    label{
+                     
+                        i{
+                            display: block;
+                            &:before{
+                                color: $font-color;
+                                font-size: 14px;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .settings__font {
+            @include padding-width-border;
+            
+
+            h3 {
+                @include titulos-settings;
+            }
+            div{
+                margin-top: 1.5rem;
+                display: inline-block;
+                margin-right: 12px;
+                input{
+                    display: none
+                }
+                label{
+                    padding: 8px;
+                    background-color: $input-color;
+                    border-radius: 50%;
+                    font-weight: 500;
+                    &.active{
+                        background-color: $primary-color;
+                        color: $input-color;
+                    }
+                    
+                }
+            }
+        }
+
+        .settings__color {
+            @include padding-width-border;
+            border-bottom: 0;
+            h3{
+              @include titulos-settings;
+            }
+            .color-inputs-container{
+                margin-top:8px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                div{
+                    margin-right: 8px;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    input{
+
+                        display: none
+                    }
+                    
+                    label{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        height: 36px;
+                        width: 36px;
+                        border-radius: 50%;
+                        &.op_1{
+                            background-color: $secundary-color;
+                        }
+                        &.op_2{
+                            background-color: $tertiary-colors;
+                        }
+                        &.op_3{
+                            background-color: $quaternary-color;
+                        }
+                        .fa-solid{
+                            &::before{
+                                font-size: 12px;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                
+        
+            }
+    
+        }
+        .settings-btn__aply{
+            border: none;
+            background-color: $tertiary-colors;
+            color: #fff;
+            font-size: $font-size*1.2;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+        }
+
+    }
+}

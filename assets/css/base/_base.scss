@@ -2,7 +2,7 @@
 *{
     box-sizing: border-box;
 }
-body{
+body,html{
     min-height: 100vh;
     background-image: radial-gradient($secundary-color, $primary-color);
     font-family: $font-family;
