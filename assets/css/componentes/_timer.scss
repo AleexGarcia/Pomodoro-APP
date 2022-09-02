@@ -71,3 +71,13 @@
         }
     }
 }
+
+@media screen and (min-width:1024px) {
+
+  .base-timer .timer .timer__time{
+    font-size: $font-size*6.0;
+  }
+  .base-timer .timer .timer__pause{
+    font-size: $font-size*2;
+  }
+}

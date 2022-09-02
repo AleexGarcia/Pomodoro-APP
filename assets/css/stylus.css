@@ -20,6 +20,11 @@ body, html {
   display: none;
 }
 
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 45vw;
+  }
+}
 .header {
   text-align: center;
   padding-top: 2rem;
@@ -122,6 +127,14 @@ body, html {
   color: rgb(248, 42, 6);
 }
 
+@media screen and (min-width: 1024px) {
+  .base-timer .timer .timer__time {
+    font-size: 6rem;
+  }
+  .base-timer .timer .timer__pause {
+    font-size: 2rem;
+  }
+}
 .main {
   text-align: center;
 }
@@ -131,6 +144,7 @@ body, html {
   border: none;
   background: none;
   outline: none;
+  cursor: pointer;
 }
 .settings__btn .fa-solid:before {
   color: #fff;
@@ -226,21 +240,21 @@ body, html {
   font-weight: 500;
   letter-spacing: 3.5px;
 }
-.settings form .settings__font div {
+.settings form .settings__font div div {
   margin-top: 1.5rem;
   display: inline-block;
   margin-right: 12px;
 }
-.settings form .settings__font div input {
+.settings form .settings__font div div input {
   display: none;
 }
-.settings form .settings__font div label {
+.settings form .settings__font div div label {
   padding: 8px;
   background-color: rgb(245, 241, 241);
   border-radius: 50%;
   font-weight: 500;
 }
-.settings form .settings__font div label.active {
+.settings form .settings__font div div label.active {
   background-color: #16213E;
   color: rgb(245, 241, 241);
 }
@@ -300,4 +314,54 @@ body, html {
   font-size: 1.2rem;
   padding: 1rem 2.5rem;
   border-radius: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .settings {
+    width: 40vw;
+    right: 30%;
+    height: 420px;
+    top: 10%;
+  }
+  .settings form .settings__minutes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+  }
+  .settings form .settings__minutes h3 {
+    grid-column: 1/span 3;
+    grid-row: 1/2;
+  }
+  .settings form .settings__minutes .settings__container {
+    text-align: left;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+    margin: 8px 0;
+  }
+  .settings form .settings__minutes .settings__container:last-child {
+    margin: 8px 0;
+  }
+  .settings form .settings__minutes .settings__container span {
+    font-size: 14px;
+  }
+  .settings form .settings__font {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .settings form .settings__font div div {
+    margin-top: 0;
+  }
+  .settings form .settings__color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .settings form .settings__color .color-inputs-container {
+    margin-top: 0;
+  }
 }/*# sourceMappingURL=stylus.css.map */

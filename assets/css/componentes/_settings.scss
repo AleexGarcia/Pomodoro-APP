@@ -22,6 +22,7 @@
     border: none;
     background: none;
     outline: none;
+    cursor: pointer;
     .fa-solid{
         &:before{
             color: #fff;
@@ -127,6 +128,7 @@
             h3 {
                 @include titulos-settings;
             }
+           div{
             div{
                 margin-top: 1.5rem;
                 display: inline-block;
@@ -146,6 +148,8 @@
                     
                 }
             }
+           }
+           
         }
 
         .settings__color {
@@ -210,4 +214,60 @@
         }
 
     }
+}
+@media screen and  (min-width: 768px) {
+        .settings{
+            width: 40vw;
+            right: 30%;
+            height: 420px;
+            top:10%;
+            form{
+                .settings__minutes{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: auto auto;
+                    align-items: center;
+                    
+                    column-gap:8px ;
+                    h3{
+                        grid-column: 1 / span 3;
+                        grid-row: 1 / 2;
+                    }
+                    .settings__container{
+                        text-align: left;
+                        grid-template-columns: auto;
+                        grid-template-rows: auto auto;
+                        row-gap: 8px;
+                        margin: 8px 0;
+                        &:last-child{
+                            margin: 8px 0;
+                        }
+                        span{
+                            font-size: 14px;
+                            
+                        }
+                    }
+                    
+                }
+                .settings__font{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    div{
+                        div{
+                            margin-top: 0;
+                        }
+                        
+                    }
+                }
+                .settings__color{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .color-inputs-container{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
 }
