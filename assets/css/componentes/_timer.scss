@@ -1,3 +1,4 @@
+@import '../base/variaveis';
 .base-timer{
     margin-top: 2rem;
     position: relative;
@@ -30,7 +31,13 @@
             stroke: currentColor;
         }
         .base-timer__path-remaining.green {
-            color: rgb(65, 184, 131);
+            color: $quinta-cor;
+          }
+          .base-timer__path-remaining.rosa {
+            color: $tertiary-colors;
+          }
+          .base-timer__path-remaining.roxo {
+            color: $quaternary-color;
           }
           
           .base-timer__path-remaining.orange {

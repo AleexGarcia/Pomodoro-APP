@@ -1,14 +1,31 @@
 @import 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap';
 * {
   box-sizing: border-box;
 }
 
-body, html {
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
   min-height: 100vh;
   background-image: radial-gradient(#0F3460, #16213E);
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #6a7d94;
+}
+
+.font:root {
+  font-family: "Roboto", sans-serif;
+}
+
+.font2:root {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.font3:root {
+  font-family: "Libre Baskerville", serif;
 }
 
 .container {
@@ -92,6 +109,12 @@ body, html {
 }
 .base-timer .base-timer__circle .base-timer__path-remaining.green {
   color: rgb(65, 184, 131);
+}
+.base-timer .base-timer__circle .base-timer__path-remaining.rosa {
+  color: #E94560;
+}
+.base-timer .base-timer__circle .base-timer__path-remaining.roxo {
+  color: #533483;
 }
 .base-timer .base-timer__circle .base-timer__path-remaining.orange {
   color: orange;
@@ -179,6 +202,9 @@ body, html {
   font-weight: 700;
   font-size: 1.25rem;
 }
+.settings form .settings__header .fa-solid {
+  cursor: pointer;
+}
 .settings form .settings__header .fa-solid::before {
   font-size: 1rem;
   color: #6a7d94;
@@ -205,87 +231,102 @@ body, html {
 .settings form .settings__minutes .settings__container:last-child {
   margin-bottom: 0;
 }
-.settings form .settings__minutes .settings__container div {
+.settings form .settings__minutes .settings__container .input_container {
   display: flex;
   align-items: center;
   background: rgb(245, 241, 241);
   padding: 8px;
   border-radius: 8px;
+  justify-content: space-evenly;
 }
-.settings form .settings__minutes .settings__container div input {
+.settings form .settings__minutes .settings__container .input_container input {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
   outline: none;
   border: none;
   background: none;
-  width: 100%;
+  width: 85%;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
   color: #16213E;
   text-align: center;
   font-size: 1rem;
 }
-.settings form .settings__minutes .settings__container div label i {
+.settings form .settings__minutes .settings__container .input_container .operadores i {
   display: block;
+  cursor: pointer;
 }
-.settings form .settings__minutes .settings__container div label i:before {
+.settings form .settings__minutes .settings__container .input_container .operadores:before {
   color: #6a7d94;
   font-size: 14px;
 }
-.settings form .settings__font {
+.settings form .settings__minutes .settings__container .input_container .operadores:before:hover {
+  color: red;
+}
+.settings .settings__font {
   padding: 1.5rem 1rem;
   width: 100%;
   border-bottom: 1px solid #6a7d94;
 }
-.settings form .settings__font h3 {
+.settings .settings__font h3 {
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 3.5px;
 }
-.settings form .settings__font div div {
+.settings .settings__font .fonts__container div {
   margin-top: 1.5rem;
   display: inline-block;
   margin-right: 12px;
 }
-.settings form .settings__font div div input {
+.settings .settings__font .fonts__container div input {
   display: none;
 }
-.settings form .settings__font div div label {
+.settings .settings__font .fonts__container div label {
   padding: 8px;
   background-color: rgb(245, 241, 241);
   border-radius: 50%;
   font-weight: 500;
+  cursor: pointer;
 }
-.settings form .settings__font div div label.active {
+.settings .settings__font .fonts__container div label.active {
   background-color: #16213E;
   color: rgb(245, 241, 241);
 }
-.settings form .settings__color {
+.settings .settings__color {
   padding: 1.5rem 1rem;
   width: 100%;
   border-bottom: 1px solid #6a7d94;
   border-bottom: 0;
 }
-.settings form .settings__color h3 {
+.settings .settings__color h3 {
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 3.5px;
 }
-.settings form .settings__color .color-inputs-container {
+.settings .settings__color .color-inputs-container {
   margin-top: 8px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.settings form .settings__color .color-inputs-container div {
+.settings .settings__color .color-inputs-container div {
   margin-right: 8px;
 }
-.settings form .settings__color .color-inputs-container div:last-child {
+.settings .settings__color .color-inputs-container div:last-child {
   margin-right: 0;
 }
-.settings form .settings__color .color-inputs-container div input {
+.settings .settings__color .color-inputs-container div input {
   display: none;
 }
-.settings form .settings__color .color-inputs-container div label {
+.settings .settings__color .color-inputs-container div .check::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: white;
+}
+.settings .settings__color .color-inputs-container div .color__label {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,20 +335,21 @@ body, html {
   width: 36px;
   border-radius: 50%;
 }
-.settings form .settings__color .color-inputs-container div label.op_1 {
-  background-color: #0F3460;
+.settings .settings__color .color-inputs-container div .color__label.op_1 {
+  background-color: rgb(65, 184, 131);
 }
-.settings form .settings__color .color-inputs-container div label.op_2 {
+.settings .settings__color .color-inputs-container div .color__label.op_2 {
   background-color: #E94560;
 }
-.settings form .settings__color .color-inputs-container div label.op_3 {
+.settings .settings__color .color-inputs-container div .color__label.op_3 {
   background-color: #533483;
 }
-.settings form .settings__color .color-inputs-container div label .fa-solid::before {
+.settings .settings__color .color-inputs-container div .fa-solid::before {
   font-size: 12px;
   color: #fff;
 }
-.settings form .settings-btn__aply {
+
+.settings-btn__aply {
   border: none;
   background-color: #E94560;
   color: #fff;

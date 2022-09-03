@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="font">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
             <a href="" class="nav__link active">pomodoro</a>
             <a href="" class="nav__link">short break</a>
             <a href="" class="nav__link">long break</a>
-            
+
         </nav>
     </header>
     <main class="main">
@@ -31,82 +31,82 @@
 
         </section>
 
-        <button class="settings__btn"><i class="fa-solid fa-gear"></i></button>
-        <section class="settings">
+        <button id="botao" class="settings__btn"><i class="fa-solid fa-gear"></i></button>
+        <section class="settings oculto" id="settings">
             <form action="">
                 <div class="settings__header">
                     <h2>Settings</h2>
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-xmark" id="settings-close"></i>
                 </div>
-                <div class="settings__minutes">
+                <div class="settings__minutes" id="settings__minutes">
                     <h3>time (minutes)</h3>
                     <div class="settings__container">
-                        <span>pomodoro</span>
-                        <div>
-                            <input pattern="^\d+$" id="pomodoro-time">
-                            <label for="pomodoro-time">
-                                <i class="fa-solid fa-angle-up"></i>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </label>
+                        <label>pomodoro</label>
+                        <div class="input_container">
+                            <input pattern="^\d+$" inputmode="numeric" id="pomodoro-time" value="1">
+                            <div class="operadores">
+                                <i class="fa-solid fa-angle-up" data-operador="+"></i>
+                                <i class="fa-solid fa-angle-down" data-operador="-"></i>
+                            </div>
                         </div>
 
                     </div>
                     <div class="settings__container">
-                        <span>short break</span>
-                        <div>
-                            <input pattern="^\d+$" id="short-break">
-                            <label for="short-break">
-                                <i class="fa-solid fa-angle-up"></i>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </label>
+                        <label>short break</label>
+                        <div class="input_container">
+                            <input pattern="^\d+$" inputmode="numeric" id="short-break" value="1">
+                            <div class="operadores">
+                                <i class="fa-solid fa-angle-up" data-operador="+"></i>
+                                <i class="fa-solid fa-angle-down" data-operador="-"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="settings__container">
-                        <span>long break</span>
-                        <div>
-                            <input pattern="^\d+$" id="long-break">
-                            <label for="pomodoro-time">
-                                <i class="fa-solid fa-angle-up"></i>
-                                <i class="fa-solid fa-angle-down"></i>
-                            </label>
+                        <label>long break</label>
+                        <div class="input_container">
+                            <input pattern="^\d+$" inputmode="numeric" id="long-break" value="1">
+                            <div class="operadores">
+                                <i class="fa-solid fa-angle-up" data-operador="+"></i>
+                                <i class="fa-solid fa-angle-down" data-operador="-"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="settings__font">
                     <h3 class="font__title">Font</h3>
-                   <div>
-                    <div>
-                        <input class="font__input" type="radio" value="" name="font" id="font">
-                        <label for="font" class="font__label active">Aa</label>
+                    <div class="fonts__container">
+                        <div>
+                            <input class="font__input" type="radio" name="fontes" value="font" id="roboto">
+                            <label for="roboto" class="font__label active" id="font-label">Aa</label>
+                        </div>
+                        <div>
+                            <input class="font__input" type="radio" name="fontes" value="font2" id="ubuntu">
+                            <label for="ubuntu" class="font__label" id="font2-label">Aa</label>
+                        </div>
+                        <div>
+                            <input class="font__input" type="radio" name="fontes" value="font3" id="baskerville">
+                            <label for="baskerville" class="font__label" id="font3-label">Aa</label>
+                        </div>
                     </div>
-                    <div>
-                        <input class="font__input" type="radio" value="roboto" name="font" id="font">
-                        <label for="font" class="font__label">Aa</label>
-                    </div>
-                    <div>
-                        <input class="font__input" type="radio" value="san-serif" name="font" id="font-3">
-                        <label for="font" class="font__label">Aa</label>
-                    </div>
-                   </div>
-                   
+
                 </div>
                 <div class="settings__color">
                     <h3 class="font__title">color</h3>
                     <div class="color-inputs-container">
                         <div>
-                            <input class="color__input" type="radio" value="green" name="color" id="font-1">
-                            <label for="color" class="font__label op_1"><i class="fa-solid fa-check"></i></label>
+                            <input class="color__input" type="radio" value="green" name="color" id="green">
+                            <label for="green" class="color__label op_1 check" id="green-label"></label>
                         </div>
                         <div>
-                            <input class="color__input" type="radio" value="red" name="color" id="font-2">
-                            <label for="color" class="color__label op_2"><i class="fa-solid "></i></label>
+                            <input class="color__input" type="radio" value="rosa" name="color" id="rosa">
+                            <label for="rosa" class="color__label op_2 " id="rosa-label"></label>
                         </div>
                         <div>
-                            <input class="color__input" type="radio" value="blue" name="color" id="font-3">
-                            <label for="color" class="color__label op_3"><i class="fa-solid "></i></label>
+                            <input class="color__input" type="radio" value="roxo" name="color" id="roxo">
+                            <label for="roxo" class="color__label op_3 " id="roxo-label"></label>
                         </div>
                     </div>
-                    
+
                 </div>
                 <button class="settings-btn__aply" type="submit">Apply</button>
             </form>
@@ -115,7 +115,8 @@
     <footer class="footer">
 
     </footer>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/settings.js"></script>
 </body>
 
 </html>

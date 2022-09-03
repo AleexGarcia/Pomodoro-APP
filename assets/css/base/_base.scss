@@ -2,13 +2,24 @@
 *{
     box-sizing: border-box;
 }
-body,html{
+html{
+    font-family: $font-family;
+}
+body{
     min-height: 100vh;
     background-image: radial-gradient($secundary-color, $primary-color);
-    font-family: $font-family;
     font-weight: 300;
     color: $font-color;
     
+}
+.font:root{
+    font-family: $font-family;
+}
+.font2:root{
+    font-family: $font-family2;
+}
+.font3:root{
+    font-family: $font-family3;
 }
 .container{
     margin: 0 auto;

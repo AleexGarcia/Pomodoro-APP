@@ -23,8 +23,9 @@
     background: none;
     outline: none;
     cursor: pointer;
-    .fa-solid{
-        &:before{
+
+    .fa-solid {
+        &:before {
             color: #fff;
             font-size: 2rem;
         }
@@ -63,11 +64,14 @@
             }
 
             .fa-solid {
+                cursor: pointer;
 
                 &::before {
                     font-size: 1rem;
                     color: $font-color;
+
                 }
+
             }
         }
 
@@ -78,196 +82,248 @@
                 @include titulos-settings;
                 margin-bottom: 1.25rem;
             }
-            .settings__container{
+
+            .settings__container {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-row: auto;
                 align-items: center;
                 justify-content: space-between;
                 margin-bottom: 1rem;
-                &:last-child{
+
+                &:last-child {
                     margin-bottom: 0;
                 }
-                div{
+
+                .input_container {
                     display: flex;
                     align-items: center;
                     background: $input-color;
                     padding: 8px;
                     border-radius: 8px;
-                    input{
+                    justify-content: space-evenly;
+
+                    input {
+                        appearance: none;
+                        -webkit-appearance: none;
                         outline: none;
                         border: none;
                         background: none;
-                        width: 100%;
+                        width: 85%;
                         font-weight: 500;
                         font-family: $font-family;
                         color: $primary-color;
                         text-align: center;
                         font-size: 1rem;
                     }
-                    label{
-                     
-                        i{
+
+                    .operadores {
+
+                        i {
                             display: block;
-                            &:before{
-                                color: $font-color;
-                                font-size: 14px;
-                                
+                            cursor: pointer;
+
+                        }
+
+                        &:before {
+                            color: $font-color;
+                            font-size: 14px;
+
+                            &:hover {
+                                color: red;
                             }
                         }
                     }
                 }
             }
-
         }
 
-        .settings__font {
-            @include padding-width-border;
-            
+    }
 
-            h3 {
-                @include titulos-settings;
-            }
-           div{
-            div{
+    .settings__font {
+        @include padding-width-border;
+
+
+        h3 {
+            @include titulos-settings;
+        }
+
+        .fonts__container {
+            div {
                 margin-top: 1.5rem;
                 display: inline-block;
                 margin-right: 12px;
-                input{
+
+                input {
                     display: none
                 }
-                label{
+
+                label {
                     padding: 8px;
                     background-color: $input-color;
                     border-radius: 50%;
                     font-weight: 500;
-                    &.active{
+                    cursor: pointer;
+
+                    &.active {
                         background-color: $primary-color;
                         color: $input-color;
                     }
-                    
+
                 }
             }
-           }
-           
-        }
-
-        .settings__color {
-            @include padding-width-border;
-            border-bottom: 0;
-            h3{
-              @include titulos-settings;
-            }
-            .color-inputs-container{
-                margin-top:8px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                div{
-                    margin-right: 8px;
-                    &:last-child{
-                        margin-right: 0;
-                    }
-                    input{
-
-                        display: none
-                    }
-                    
-                    label{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        height: 36px;
-                        width: 36px;
-                        border-radius: 50%;
-                        &.op_1{
-                            background-color: $secundary-color;
-                        }
-                        &.op_2{
-                            background-color: $tertiary-colors;
-                        }
-                        &.op_3{
-                            background-color: $quaternary-color;
-                        }
-                        .fa-solid{
-                            &::before{
-                                font-size: 12px;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
-                
-        
-            }
-    
-        }
-        .settings-btn__aply{
-            border: none;
-            background-color: $tertiary-colors;
-            color: #fff;
-            font-size: $font-size*1.2;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
         }
 
     }
-}
-@media screen and  (min-width: 768px) {
-        .settings{
-            width: 40vw;
-            right: 30%;
-            height: 420px;
-            top:10%;
-            form{
-                .settings__minutes{
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    grid-template-rows: auto auto;
-                    align-items: center;
-                    
-                    column-gap:8px ;
-                    h3{
-                        grid-column: 1 / span 3;
-                        grid-row: 1 / 2;
-                    }
-                    .settings__container{
-                        text-align: left;
-                        grid-template-columns: auto;
-                        grid-template-rows: auto auto;
-                        row-gap: 8px;
-                        margin: 8px 0;
-                        &:last-child{
-                            margin: 8px 0;
-                        }
-                        span{
-                            font-size: 14px;
-                            
-                        }
-                    }
-                    
+
+    .settings__color {
+        @include padding-width-border;
+        border-bottom: 0;
+
+        h3 {
+            @include titulos-settings;
+        }
+
+        .color-inputs-container {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            div {
+                margin-right: 8px;
+
+                &:last-child {
+                    margin-right: 0;
                 }
-                .settings__font{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    div{
-                        div{
-                            margin-top: 0;
-                        }
-                        
-                    }
+
+                input {
+
+                    display: none
                 }
-                .settings__color{
+
+                .check::before {
+
+                    content: '\f00c';
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    color: white;
+
+                }
+
+                .color__label {
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
-                    justify-content: space-between;
-                    .color-inputs-container{
-                        margin-top: 0;
+                    justify-content: center;
+                    height: 36px;
+                    width: 36px;
+                    border-radius: 50%;
+                   
+                    &.op_1 {
+                        background-color: $quinta-cor;
+                    }
+    
+                    &.op_2 {
+                        background-color: $tertiary-colors;
+                    }
+    
+                    &.op_3 {
+                        background-color: $quaternary-color;
+                    }
+
+                }
+
+              
+
+                .fa-solid {
+                    &::before {
+                        font-size: 12px;
+                        color: #fff;
                     }
                 }
             }
         }
+
+
+    }
+
+}
+
+.settings-btn__aply {
+    border: none;
+    background-color: $tertiary-colors;
+    color: #fff;
+    font-size: $font-size*1.2;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .settings {
+        width: 40vw;
+        right: 30%;
+        height: 420px;
+        top: 10%;
+
+        form {
+            .settings__minutes {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto auto;
+                align-items: center;
+
+                column-gap: 8px;
+
+                h3 {
+                    grid-column: 1 / span 3;
+                    grid-row: 1 / 2;
+                }
+
+                .settings__container {
+                    text-align: left;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto;
+                    row-gap: 8px;
+                    margin: 8px 0;
+
+                    &:last-child {
+                        margin: 8px 0;
+                    }
+
+                    span {
+                        font-size: 14px;
+
+                    }
+                }
+
+            }
+
+            .settings__font {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                div {
+                    div {
+                        margin-top: 0;
+                    }
+
+                }
+            }
+
+            .settings__color {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .color-inputs-container {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
 }
