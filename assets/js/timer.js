@@ -77,6 +77,7 @@ function startTimer(tempoTotal) {
       buttonStartPause.textContent = 'restart';
       buttonStartPause.dataset.funcao = 'restart';
       onTimesUp();
+      document.querySelector('#audio').play();
     }
   }, 1000);
 }

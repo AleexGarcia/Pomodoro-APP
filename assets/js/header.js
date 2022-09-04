@@ -7,6 +7,7 @@ links.forEach(link => {
         if (e.target.dataset.link === 'pomodoro') {
 
             criaTimer(recebeCor(), recebeTempos().pomodoro);
+            clearInterval(timerInterval);
             addEventControle();
             tempoTotal = recebeTempos().pomodoro;
             tempoDecorrido = 0;
@@ -17,6 +18,7 @@ links.forEach(link => {
         } else if (e.target.dataset.link === 'shortBreak') {
 
             criaTimer(recebeCor(), recebeTempos().shortBreak);
+            clearInterval(timerInterval);
             addEventControle();
             tempoTotal = recebeTempos().shortBreak;
             tempoDecorrido = 0;
@@ -26,6 +28,7 @@ links.forEach(link => {
 
         } else if (e.target.dataset.link === 'longBreak') {
             criaTimer(recebeCor(), recebeTempos().longBreak);
+            clearInterval(timerInterval);
             addEventControle();
             tempoTotal = recebeTempos().longBreak;
             tempoDecorrido = 0;

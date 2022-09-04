@@ -25,15 +25,26 @@ settingsMinutes.addEventListener("click", e => {
     }
 
 })
-function recebeTempos() {
-    tempos = {
-        pomodoro: document.getElementById('pomodoro-time').value*60,
-        shortBreak: document.getElementById('short-break').value*60,
-        longBreak: document.getElementById('long-break').value*60
-    }
 
+
+let timePomodoro = document.getElementById('pomodoro-time');
+let timeShortBreak = document.getElementById('short-break');
+let timeLongBreak = document.getElementById('long-break');
+
+function recebeTempos() {
+
+
+    tempos = {
+        pomodoro: timePomodoro.value * 60,
+        shortBreak: timeShortBreak.value * 60,
+        longBreak: timeLongBreak.value * 60
+    }
     return tempos;
 }
+
+
+
+
 function recebeCor() {
     let inputsDeCor = document.querySelectorAll('[data-input="cor"]');
     inputsDeCor.forEach(input => {
@@ -54,8 +65,8 @@ function recebeFonte() {
 
     return fonte;
 }
-function mudaTimer(tempos,cor){
-    criaTimer(cor,tempos.pomodoro);
+function mudaTimer(tempos, cor) {
+    criaTimer(cor, tempos.pomodoro);
 }
 function mudaFonte(fonteEscolhida) {
     let html = document.querySelector('html')
@@ -64,7 +75,7 @@ function mudaFonte(fonteEscolhida) {
 }
 
 function mudaCor(cor) {
-    
+
     let linksNav = document.querySelectorAll('.nav__link');
     linksNav.forEach(link => {
         link.classList.forEach(classe => {
@@ -73,7 +84,7 @@ function mudaCor(cor) {
             }
         })
     })
-    
+
 
 }
 
@@ -132,22 +143,28 @@ fontTres.addEventListener('click', () => {
 
 aply = document.querySelector("#aply");
 
-aply.addEventListener('click',e=>{
-    e.preventDefault();
-    mudaCor(recebeCor());
-    mudaFonte(recebeFonte());
-    mudaTimer(recebeTempos(),recebeCor());
-    settings.classList.add('oculto');
-    addEventControle();
-    tempoTotal = recebeTempos().pomodoro;
-    tempoDecorrido = 0;
-    tempoRestante = tempoTotal;
-    let links = document.querySelectorAll('.nav__link');
-    links[0].classList.add('active',recebeCor());
-    links[1].classList.remove('active',recebeCor());
-    links[2].classList.remove('active',recebeCor());
-})
+aply.addEventListener('click', e => {
+    if (
+        timePomodoro.validity.valid &&
+        timeShortBreak.validity.valid &&
+        timeLongBreak.validity.valid
+    ) {
+        e.preventDefault();
+        mudaCor(recebeCor());
+        mudaFonte(recebeFonte());
+        mudaTimer(recebeTempos(), recebeCor());
+        tempoTotal = recebeTempos().pomodoro;
+        tempoDecorrido = 0;
+        tempoRestante = tempoTotal;
+        settings.classList.add('oculto');
+        addEventControle();
+        let links = document.querySelectorAll('.nav__link');
+        links[0].classList.add('active', recebeCor());
+        links[1].classList.remove('active', recebeCor());
+        links[2].classList.remove('active', recebeCor());
+    }
 
+})
 
 
 
