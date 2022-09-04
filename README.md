@@ -32,8 +32,8 @@ Os usuários devem ser capazes de:
 
 ### Links
 
-- Solution URL: [](https://github.com/AleexGarcia/Pomodoro-APP)
-- Live Site URL: [](pomodoro-app-orcin-sigma.vercel.app)
+- [Solution URL](https://github.com/AleexGarcia/Pomodoro-APP)
+- [Live Site URL](https://pomodoro-app-orcin-sigma.vercel.app)
 
 ## Meu-processo
 
