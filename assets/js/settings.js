@@ -153,6 +153,7 @@ aply.addEventListener('click', e => {
         mudaCor(recebeCor());
         mudaFonte(recebeFonte());
         mudaTimer(recebeTempos(), recebeCor());
+        clearInterval(timerInterval);
         tempoTotal = recebeTempos().pomodoro;
         tempoDecorrido = 0;
         tempoRestante = tempoTotal;
