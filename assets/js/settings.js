@@ -142,6 +142,10 @@ aply.addEventListener('click',e=>{
     tempoTotal = recebeTempos().pomodoro;
     tempoDecorrido = 0;
     tempoRestante = tempoTotal;
+    let links = document.querySelectorAll('.nav__link');
+    links[0].classList.add('active',recebeCor());
+    links[1].classList.remove('active',recebeCor());
+    links[2].classList.remove('active',recebeCor());
 })
 
 
