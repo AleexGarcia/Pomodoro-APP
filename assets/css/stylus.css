@@ -72,8 +72,16 @@ body {
   padding: 1rem;
 }
 .header .header__nav .active {
-  background-color: #533483;
   color: #16213E;
+}
+.header .header__nav .green {
+  background-color: rgb(65, 184, 131);
+}
+.header .header__nav .rosa {
+  background-color: #E94560;
+}
+.header .header__nav .roxo {
+  background-color: #533483;
 }
 
 .base-timer {
@@ -130,7 +138,7 @@ body {
   justify-content: center;
 }
 .base-timer .timer .timer__time {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #fff;
 }
@@ -152,7 +160,7 @@ body {
 
 @media screen and (min-width: 1024px) {
   .base-timer .timer .timer__time {
-    font-size: 6rem;
+    font-size: 4.5rem;
   }
   .base-timer .timer .timer__pause {
     font-size: 2rem;
@@ -334,6 +342,7 @@ body {
   height: 36px;
   width: 36px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .settings .settings__color .color-inputs-container div .color__label.op_1 {
   background-color: rgb(65, 184, 131);

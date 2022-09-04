@@ -20,7 +20,7 @@
         <h1 class="header__title">Pomodoro</h1>
         <nav class="header__nav container">
 
-            <a href="" class="nav__link active">pomodoro</a>
+            <a href="" class="nav__link active rosa">pomodoro</a>
             <a href="" class="nav__link">short break</a>
             <a href="" class="nav__link">long break</a>
 
@@ -43,7 +43,7 @@
                     <div class="settings__container">
                         <label>pomodoro</label>
                         <div class="input_container">
-                            <input pattern="^\d+$" inputmode="numeric" id="pomodoro-time" value="1">
+                            <input pattern="^\d+$" inputmode="numeric" id="pomodoro-time" value="1" data-input="tempo">
                             <div class="operadores">
                                 <i class="fa-solid fa-angle-up" data-operador="+"></i>
                                 <i class="fa-solid fa-angle-down" data-operador="-"></i>
@@ -54,7 +54,7 @@
                     <div class="settings__container">
                         <label>short break</label>
                         <div class="input_container">
-                            <input pattern="^\d+$" inputmode="numeric" id="short-break" value="1">
+                            <input pattern="^\d+$" inputmode="numeric" id="short-break" value="1" data-input="tempo">
                             <div class="operadores">
                                 <i class="fa-solid fa-angle-up" data-operador="+"></i>
                                 <i class="fa-solid fa-angle-down" data-operador="-"></i>
@@ -64,7 +64,7 @@
                     <div class="settings__container">
                         <label>long break</label>
                         <div class="input_container">
-                            <input pattern="^\d+$" inputmode="numeric" id="long-break" value="1">
+                            <input pattern="^\d+$" inputmode="numeric" id="long-break" value="1" data-input="tempo">
                             <div class="operadores">
                                 <i class="fa-solid fa-angle-up" data-operador="+"></i>
                                 <i class="fa-solid fa-angle-down" data-operador="-"></i>
@@ -76,15 +76,15 @@
                     <h3 class="font__title">Font</h3>
                     <div class="fonts__container">
                         <div>
-                            <input class="font__input" type="radio" name="fontes" value="font" id="roboto">
+                            <input class="font__input" type="radio" name="fontes" value="font" id="roboto" data-input="fonte">
                             <label for="roboto" class="font__label active" id="font-label">Aa</label>
                         </div>
                         <div>
-                            <input class="font__input" type="radio" name="fontes" value="font2" id="ubuntu">
+                            <input class="font__input" type="radio" name="fontes" value="font2" id="ubuntu" data-input="fonte">
                             <label for="ubuntu" class="font__label" id="font2-label">Aa</label>
                         </div>
                         <div>
-                            <input class="font__input" type="radio" name="fontes" value="font3" id="baskerville">
+                            <input class="font__input" type="radio" name="fontes" value="font3" id="baskerville" data-input="fonte">
                             <label for="baskerville" class="font__label" id="font3-label">Aa</label>
                         </div>
                     </div>
@@ -94,15 +94,15 @@
                     <h3 class="font__title">color</h3>
                     <div class="color-inputs-container">
                         <div>
-                            <input class="color__input" type="radio" value="green" name="color" id="green">
+                            <input class="color__input" type="radio" value="green" name="color" id="green" data-input="cor">
                             <label for="green" class="color__label op_1 check" id="green-label"></label>
                         </div>
                         <div>
-                            <input class="color__input" type="radio" value="rosa" name="color" id="rosa">
+                            <input class="color__input" type="radio" value="rosa" name="color" id="rosa" data-input="cor">
                             <label for="rosa" class="color__label op_2 " id="rosa-label"></label>
                         </div>
                         <div>
-                            <input class="color__input" type="radio" value="roxo" name="color" id="roxo">
+                            <input class="color__input" type="radio" value="roxo" name="color" id="roxo" data-input="cor">
                             <label for="roxo" class="color__label op_3 " id="roxo-label"></label>
                         </div>
                     </div>

@@ -220,6 +220,7 @@
                     height: 36px;
                     width: 36px;
                     border-radius: 50%;
+                    cursor: pointer;
                    
                     &.op_1 {
                         background-color: $quinta-cor;
@@ -234,8 +235,6 @@
                     }
 
                 }
-
-              
 
                 .fa-solid {
                     &::before {

@@ -56,7 +56,7 @@
         align-items: center;
         justify-content: center;
         .timer__time{
-          font-size: 5rem;
+          font-size: 4rem;
           font-weight: 700;
           color: #fff;
         }
@@ -82,7 +82,7 @@
 @media screen and (min-width:1024px) {
 
   .base-timer .timer .timer__time{
-    font-size: $font-size*6.0;
+    font-size: $font-size*4.5;
   }
   .base-timer .timer .timer__pause{
     font-size: $font-size*2;

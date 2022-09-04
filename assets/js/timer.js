@@ -1,32 +1,17 @@
-const FULL_DASH_ARRAY = 283; 
+const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
 
-const COLOR_CODES = {
-    info: {
-        color: "green"
-      },
-      warning: {
-        color: "orange",
-        threshold: WARNING_THRESHOLD
-      },
-      alert: {
-        color: "red",
-        threshold: ALERT_THRESHOLD
-      }
-  };
+let tempoDecorrido = 0;
+let timerInterval = null;
+let tempoTotal = 10;
+criaTimer('rosa', tempoTotal);
 
- const TIME_LIMIT = 120;
+function criaTimer(cor, tempo) {
 
+  const app = document.querySelector('#app');
 
- let timePassed = 0;
- let timeLeft = TIME_LIMIT;
- let timerInterval = null;
- let remainingPathColor = COLOR_CODES.info.color;
-
-const app = document.querySelector('#app');
-
-app.innerHTML = `
+  app.innerHTML = `
                     <div class="base-timer container">
                         <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <g class="base-timer__circle">
@@ -34,7 +19,7 @@ app.innerHTML = `
                                 <path
                                         id="base-timer-path-remaining"
                                         stroke-dasharray="283"
-                                        class="base-timer__path-remaining ${remainingPathColor}"
+                                        class="base-timer__path-remaining ${cor}"
                                         d="
                                         M 50, 50
                                         m -45, 0
@@ -45,72 +30,73 @@ app.innerHTML = `
                             </g>
                         </svg>
                         <div class="timer">
-                            <span class="timer__time" id="timer">${formatTime(timeLeft)}</span>
-                            <button class="timer__pause">pause</button>
+                            <span class="timer__time" id="timer">${formatTime(tempo)}</span>
+                            <button class="timer__pause" id="start-pause" data-funcao='start'>start</button>
                         </div>
                     </div>
 `
-startTimer();
-
-function onTimesUp() {
-    clearInterval(timerInterval);
+}
+buttonStartPause = document.querySelector('#start-pause');
+buttonStartPause.addEventListener('click', ()=>{
+  if (buttonStartPause.dataset.funcao === 'start') {
+    startTimer(tempoTotal);
+    buttonStartPause.dataset.funcao = 'pause';
+    buttonStartPause.textContent = 'pause';
+  } else if (buttonStartPause.dataset.funcao === 'pause') {
+    pauseTimer();
+    buttonStartPause.dataset.funcao = 'start';
+    buttonStartPause.textContent = 'start';
+  } else if (buttonStartPause.dataset.funcao === 'restart') {
+    document.querySelector("#timer").textContent = formatTime(tempoTotal);
+    startTimer(tempoTotal);
   }
+})
+
+function pauseTimer() {
+  onTimesUp();
+}
+
 //inicia e faz a contagem
-function startTimer() {
-    timerInterval = setInterval(() => {
-        timePassed += 1;
-        timeLeft = TIME_LIMIT - timePassed;
-        document.querySelector("#timer").innerHTML = formatTime(timeLeft);
-        setCircleDasharray();
-        setRemainingPathColor(timeLeft);
-        if (timeLeft === 0) {
-            onTimesUp();
-          }
-    }, 1000);
+function startTimer(tempoTotal) {
+
+  timerInterval = setInterval(() => {
+    tempoDecorrido += 1;
+    tempoRestante = tempoTotal - tempoDecorrido;
+    document.querySelector("#timer").innerHTML = formatTime(tempoRestante);
+    setCircleDasharray(tempoRestante, tempoTotal);
+    console.log(tempoDecorrido);
+    console.log(tempoRestante);
+    if (tempoRestante === 0) {
+      tempoRestante = tempoTotal;
+      tempoDecorrido = 0;
+      buttonStartPause.textContent = 'restart';
+      buttonStartPause.dataset.funcao = 'restart';
+      onTimesUp();
+
+    }
+  }, 1000);
 }
 //transforma o tempo em  minutos e segundos
-function formatTime(timeLeft) {
-    const minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
-    }
-    return `${minutes}:${seconds}`;
-}
-//calcula fração do tempo
-function calculateTimeFraction(){
-    return timeLeft / TIME_LIMIT;
+function formatTime(tempoRestante) {
+  const minutes = Math.floor(tempoRestante / 60);
+  let seconds = tempoRestante % 60;
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+  return `${minutes}:${seconds}`;
 }
 //vai redesenhando o circulo, inicia em 283
-function setCircleDasharray(){
-    const setCircleDasharray = `${(calculateTimeFraction()*FULL_DASH_ARRAY).toFixed(0)} 283`
-    document.getElementById('base-timer-path-remaining').setAttribute('stroke-dasharray', setCircleDasharray);
+function setCircleDasharray(tempoRestante, tempoTotal) {
+  const setCircleDasharray = `${(calculateTimeFraction(tempoRestante, tempoTotal) * FULL_DASH_ARRAY).toFixed(0)} 283`
+  document.getElementById('base-timer-path-remaining').setAttribute('stroke-dasharray', setCircleDasharray);
 }
 
 //calcula a fração de tempo, para ir decrementando e chegar a 0 ter terminado de percorrer tudo
-function calculateTimeFraction() {
-    const rawTimeFraction = timeLeft / TIME_LIMIT;
-    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-  }
+function calculateTimeFraction(tempoRestante, tempoTotal) {
+  const rawTimeFraction = tempoRestante / tempoTotal;
+  return rawTimeFraction - (1 / tempoTotal) * (1 - rawTimeFraction);
+}
 
-  //mudanças de cores
-  function setRemainingPathColor(timeLeft) {
-    const { alert, warning, info } = COLOR_CODES;
-  
-    if (timeLeft <= alert.threshold) {
-      document
-        .getElementById("base-timer-path-remaining")
-        .classList.remove(warning.color);
-      document
-        .getElementById("base-timer-path-remaining")
-        .classList.add(alert.color);
-  
-    } else if (timeLeft <= warning.threshold) {
-      document
-        .getElementById("base-timer-path-remaining")
-        .classList.remove(info.color);
-      document
-        .getElementById("base-timer-path-remaining")
-        .classList.add(warning.color);
-    }
-  }
+function onTimesUp() {
+  clearInterval(timerInterval);
+}

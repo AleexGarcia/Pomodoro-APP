@@ -33,8 +33,17 @@
         }
 
         .active {
-            background-color: $quaternary-color;
+            
             color: $primary-color;
+        }
+        .green{
+            background-color: $quinta-cor;
+        }   
+        .rosa{
+            background-color: $tertiary-colors;
+        }
+        .roxo{
+            background-color: $quaternary-color;
         }
     }
 }
