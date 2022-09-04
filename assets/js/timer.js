@@ -4,8 +4,8 @@ const ALERT_THRESHOLD = 5;
 
 let tempoDecorrido = 0;
 let timerInterval = null;
-let tempoTotal = 10;
-criaTimer('rosa', tempoTotal);
+
+criaTimer('rosa',0);
 
 function criaTimer(cor, tempo) {
 
@@ -31,13 +31,19 @@ function criaTimer(cor, tempo) {
                         </svg>
                         <div class="timer">
                             <span class="timer__time" id="timer">${formatTime(tempo)}</span>
-                            <button class="timer__pause" id="start-pause" data-funcao='start'>start</button>
+                            <button  class="timer__pause" id="start-pause" data-funcao='start'>start</button>
                         </div>
                     </div>
 `
 }
-buttonStartPause = document.querySelector('#start-pause');
-buttonStartPause.addEventListener('click', ()=>{
+function addEventControle(){
+  buttonStartPause = document.querySelector('#start-pause');
+  buttonStartPause.addEventListener('click',controles);
+}
+
+
+function controles(){
+  
   if (buttonStartPause.dataset.funcao === 'start') {
     startTimer(tempoTotal);
     buttonStartPause.dataset.funcao = 'pause';
@@ -50,7 +56,8 @@ buttonStartPause.addEventListener('click', ()=>{
     document.querySelector("#timer").textContent = formatTime(tempoTotal);
     startTimer(tempoTotal);
   }
-})
+  
+}
 
 function pauseTimer() {
   onTimesUp();
@@ -64,15 +71,12 @@ function startTimer(tempoTotal) {
     tempoRestante = tempoTotal - tempoDecorrido;
     document.querySelector("#timer").innerHTML = formatTime(tempoRestante);
     setCircleDasharray(tempoRestante, tempoTotal);
-    console.log(tempoDecorrido);
-    console.log(tempoRestante);
     if (tempoRestante === 0) {
       tempoRestante = tempoTotal;
       tempoDecorrido = 0;
       buttonStartPause.textContent = 'restart';
       buttonStartPause.dataset.funcao = 'restart';
       onTimesUp();
-
     }
   }, 1000);
 }

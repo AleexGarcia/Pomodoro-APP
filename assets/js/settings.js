@@ -27,9 +27,9 @@ settingsMinutes.addEventListener("click", e => {
 })
 function recebeTempos() {
     tempos = {
-        pomodoro: document.getElementById('pomodoro-time').value,
-        shortBreak: document.getElementById('short-break').value,
-        longBreak: document.getElementById('long-break').value
+        pomodoro: document.getElementById('pomodoro-time').value*60,
+        shortBreak: document.getElementById('short-break').value*60,
+        longBreak: document.getElementById('long-break').value*60
     }
 
     return tempos;
@@ -54,6 +54,9 @@ function recebeFonte() {
 
     return fonte;
 }
+function mudaTimer(tempos,cor){
+    criaTimer(cor,tempos.pomodoro);
+}
 function mudaFonte(fonteEscolhida) {
     let html = document.querySelector('html')
     html.classList.replace(html.classList[0], fonteEscolhida);
@@ -61,7 +64,7 @@ function mudaFonte(fonteEscolhida) {
 }
 
 function mudaCor(cor) {
-    let corTimer = document.getElementById("base-timer-path-remaining");
+    
     let linksNav = document.querySelectorAll('.nav__link');
     linksNav.forEach(link => {
         link.classList.forEach(classe => {
@@ -70,7 +73,7 @@ function mudaCor(cor) {
             }
         })
     })
-    corTimer.classList.replace(corTimer[1], cor);
+    
 
 }
 
@@ -127,7 +130,19 @@ fontTres.addEventListener('click', () => {
 
 })
 
+aply = document.querySelector("#aply");
 
+aply.addEventListener('click',e=>{
+    e.preventDefault();
+    mudaCor(recebeCor());
+    mudaFonte(recebeFonte());
+    mudaTimer(recebeTempos(),recebeCor());
+    settings.classList.add('oculto');
+    addEventControle();
+    tempoTotal = recebeTempos().pomodoro;
+    tempoDecorrido = 0;
+    tempoRestante = tempoTotal;
+})
 
 
 
