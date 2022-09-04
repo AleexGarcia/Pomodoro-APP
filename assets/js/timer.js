@@ -55,6 +55,8 @@ function controles(){
   } else if (buttonStartPause.dataset.funcao === 'restart') {
     document.querySelector("#timer").textContent = formatTime(tempoTotal);
     startTimer(tempoTotal);
+    buttonStartPause.dataset.funcao = 'pause';
+    buttonStartPause.textContent = 'pause';
   }
   
 }
