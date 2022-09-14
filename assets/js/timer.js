@@ -5,7 +5,12 @@ const ALERT_THRESHOLD = 5;
 let tempoDecorrido = 0;
 let timerInterval = null;
 
-criaTimer('rosa',0);
+criaTimer(recebeCor(), recebeTempos().pomodoro);
+clearInterval(timerInterval);
+addEventControle();
+tempoTotal = recebeTempos().pomodoro;
+tempoDecorrido = 0;
+tempoRestante = tempoTotal;
 
 function criaTimer(cor, tempo) {
 
